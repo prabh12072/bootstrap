@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Assignment</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $("#fbutton").click(function(){
+          $("#na").text("Name: "+$("#name").val());
+          $("#em").text("Email: "+$("#email").val());
+          $("#ph").text("Phone: "+$("#phone").val());
+          sessionStorage.na=$("#name").val();
+          sessionStorage.mail=$("#email").val();
+          sessionStorage.phone=$("#phone").val();
+        })
+    });
+    
+  </script>
+</head>
+<body>
+  
+    <fieldset>
+    <br><br><br>
+     <b><center><p>Welcome to registration page</p></center></b>
+     <br><br>
+
+        <div class="form-group">
+          <label for="name" class="col-xs-2">Full Name</label>
+          <div class="form-group col-xs-10">
+            <input type="text" name="name" id="name" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-xs-2">Email</label>
+          <div class="form-group col-xs-10">
+            <input type="email" name="email" id="email" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="col-xs-2">Phone</label>
+          <div class="form-group col-xs-10">
+            <input type="tel" name="phone" id="phone" class="form-control"  >
+          </div>
+        </div>
+         <div class="form-group">
+          <button class="btn btn-block btn-primary" data-toggle="modal" id="fbutton" data-target="#myModal">Submit</button>
+    </div>
+    
+        
+      </fieldset>
+      <div class="container">
+    <form role="form" action="table.html" method="post">
+      <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Are You sure?</h4>
+              </div><div class="modal-body">
+                <p id="na"></p>
+                <p id="ph"></p>
+                <p id="em"></p>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="f1">Cancel</button>
+                <input type="submit" class="btn btn-primary " value="Submit" id="sub">
+              </div>
+            </div>
+          </div>
+      </div>
+    
+    </form>
+   
+  </div>
+</body>
+</html>
